@@ -1,12 +1,11 @@
 import "./App.css";
-import ActivitiesContainer from "./Components/Activities/ActivitiesContainer";
+import ActivitiesContainer from "./components/Activities/ActivitiesContainer";
 
 
 function App() {
   return (
-
-    <div className="App">
-      welcome to App!
+    <div >
+      <ActivitiesContainer />
     </div>
   );
 }
