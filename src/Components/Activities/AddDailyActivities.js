@@ -5,12 +5,16 @@ import dietGIF from "../../assets/Diet.gif";
 
 function AddDailyActivity() {
   return (
-    <div>
-      <div className="flex flex-col justify-center">
-        <h1>Add Daily Activity</h1>
-        <p>Please fill out the form below to record your daily activity:</p>
+    <div className="rounded-lg">
+      <div className="flex flex-col justify-center max-w-7xl m-auto bg-gray-700 ">
+        <div className="text-center pt-6 pb-10 bg-gray-800 text-white">
+          <h1 className="text-2xl font-bold mb-2">Add Daily Activity</h1>
+          <p className="text-lg">
+            Please fill out the form below to record your daily activity:
+          </p>
+        </div>
       </div>
-      <div className="flex justify-center p-10  max-w-7xl m-auto gap-10 md:flex--reverse bg-white rounded-lg">
+      <div className="flex justify-center p-10  max-w-7xl m-auto gap-10 md:flex--reverse bg-white ">
         <div>
           <form className="space-y-4">
             <div>
@@ -60,7 +64,7 @@ function AddDailyActivity() {
                 className="border border-gray-300 px-3 py-2 w-full rounded"
               />
             </div>
-            <div>
+            {/* <div>
               <label htmlFor="caloriesConsumed" className="font-bold">
                 Calories Consumed:
               </label>
@@ -71,7 +75,7 @@ function AddDailyActivity() {
                 placeholder="How many calories did you consume today?"
                 className="border border-gray-300 px-3 py-2 w-full rounded"
               />
-            </div>
+            </div> */}
             <div>
               <label htmlFor="sleepDuration" className="font-bold">
                 Sleep Duration:
@@ -93,7 +97,7 @@ function AddDailyActivity() {
           </form>
         </div>
         <div>
-          <img src={dietGIF} className="mt-10" alt="fitness" />
+          <img src={dietGIF} alt="fitness" />
         </div>
       </div>
     </div>
