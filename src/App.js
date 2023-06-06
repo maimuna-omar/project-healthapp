@@ -4,8 +4,9 @@ import ActivitiesContainer from "./Components/Activities/ActivitiesContainer";
 
 function App() {
   return (
-    <div >
-      <ActivitiesContainer />
+
+    <div className="App">
+      welcome to App!
     </div>
   );
 }
