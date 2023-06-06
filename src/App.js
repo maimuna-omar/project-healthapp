@@ -13,7 +13,7 @@ function App() {
     .then(data => setUserData(data))
     
   },[])
-  // console.log(userData)
+  console.log(userData)
 
 
   return (
