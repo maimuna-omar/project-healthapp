@@ -1,8 +1,10 @@
+import "./App.css";
+import ActivitiesContainer from "./Components/Activities/ActivitiesContainer";
 
-import './App.css';
 
 function App() {
   return (
+
     <div className="App">
       welcome to App!
     </div>
