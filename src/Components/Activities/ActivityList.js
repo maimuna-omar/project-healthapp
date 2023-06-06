@@ -1,6 +1,6 @@
 import React from "react";
 // import "./Activity.css";
-import DailyActivity from "./DailyActivity";
+// import DailyActivity from "./DailyActivity";
 
 function ActivityList({ activities, deleteHandler }) {
   return (

@@ -1,10 +1,9 @@
 import "./App.css";
-import ActivitiesContainer from "./components/Activities/ActivitiesContainer";
-
+import ActivitiesContainer from "./Components/Activities/ActivitiesContainer";
 
 function App() {
   return (
-    <div >
+    <div>
       <ActivitiesContainer />
     </div>
   );
