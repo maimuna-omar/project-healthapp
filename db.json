@@ -6,21 +6,23 @@
       "email": "Kennedy@example.com",
       "password": "kennedy1",
       "goals": [
+
         {
-            "walking": 10000,
-            "sleep": 5,
-            "waterIntake": 8,
-            "workoutTime": 30
+          "walking": 10000,
+          "sleep": 5,
+          "waterIntake": 8,
+          "workoutTime": 30
         }
       ],
       "dailyActivities": [
         {
-            "id": 1,
-            "date": "",
-            "walking": 10000,
-            "sleep": 5,
-            "waterIntake": 8,
-            "workoutTime": 30
+          "id": 1,
+          "date": "",
+          "walking": 10000,
+          "sleep": 5,
+          "waterIntake": 8,
+          "workoutTime": 30
+
         }
       ]
     },
@@ -31,20 +33,24 @@
       "password": "linet2",
       "goals": [
         {
+
             "walking": 10000,
             "sleep": 5,
             "waterIntake": 8,
             "workoutTime": 30
+
         }
       ],
       "dailyActivities": [
         {
+
             "id": 1,
             "date": "",
             "walking": 10000,
             "sleep": 5,
             "waterIntake": 8,
             "workoutTime": 30
+
         }
       ]
     },
@@ -54,11 +60,13 @@
       "email": "Maimuna@gmail.com",
       "password": "maimuna3",
       "goals": [
+
         {
             "walking": 10000,
             "sleep": 5,
             "waterIntake": 8,
             "workoutTime": 30
+
         }
       ],
       "dailyActivities": [
@@ -79,20 +87,24 @@
       "password": "maryanne4",
       "goals": [
         {
+
             "walking": 10000,
             "sleep": 5,
             "waterIntake": 8,
             "workoutTime": 30
+
         }
       ],
       "dailyActivities": [
         {
+
             "id": 1,
             "date": "",
             "walking": 10000,
             "sleep": 5,
             "waterIntake": 8,
             "workoutTime": 30
+
         }
       ]
     },
@@ -102,6 +114,7 @@
       "email": "Moffat@example.com",
       "password": "moffat5",
       "goals": [
+
         {
             "walking": 10000,
             "sleep": 5,
@@ -119,6 +132,10 @@
             "workoutTime": 30
         }
       ] 
+
     }
+  ],
+  "newUser": [
+    {}
   ]
 }
