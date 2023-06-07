@@ -11,10 +11,13 @@ function App() {
   useEffect(() => {
     fetch(`${baseUrl}`)
     .then(res => res.json())
-    .then(data => setUserData(data))
+    .then(data => {
+      setUserData(data)
+      console.log(data)
+    })
     
   },[])
-  // console.log(userData)
+  
 
 
   return (
