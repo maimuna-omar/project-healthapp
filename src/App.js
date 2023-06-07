@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import ActivitiesContainer from "./components/Activities/ActivitiesContainer";
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import "./App.css";
+import Dashboard from "./components/Dashboard";
 
 function App() {
+  const [userData, setUserData] = useState([]);
+  const baseUrl =
+    "https://my-json-server.typicode.com/Wambuiwambugu/Group-8-REST-API/users";
+
+  useEffect(() => {
+    fetch(`${baseUrl}`)
+      .then((res) => res.json())
+      .then((data) => setUserData(data));
+  }, []);
+  console.log(userData);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ActivitiesContainer />
+      <Dashboard users={userData}/>
+      welcome to App! development
     </div>
   );
 }
