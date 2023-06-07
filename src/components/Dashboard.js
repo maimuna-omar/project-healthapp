@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ActivityList from './Activities/ActivityList';
 
 const Dashboard = () => {
    
@@ -44,7 +45,7 @@ const Dashboard = () => {
             {/* <GoalList goals={goals} /> */}
     
             <h2 className="text-xl font-bold mb-2">Health Achievements</h2>
-            {/* <AchievementList achievements={achievements} /> */}
+            
           </div>
         </div>
       );
