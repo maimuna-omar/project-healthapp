@@ -1,13 +1,37 @@
+
 import Landingpage from './Components/Landingpage/Landingpage';
 import Header from './Components/Landingpage/Header';
 
   
+
+import ActivitiesContainer from "./Components/Activities/ActivitiesContainer";
+
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import "./App.css";
+
 function App() {
-  return (
-    <div >
-       <Header/>
-       <Landingpage/>
+  const [userData, setUserData] = useState([]);
+  const baseUrl =
+    "https://my-json-server.typicode.com/Wambuiwambugu/Group-8-REST-API/users";
+
+  useEffect(() => {
+    fetch(`${baseUrl}`)
+      .then((res) => res.json())
+      .then((data) => setUserData(data));
+  }, []);
+  console.log(userData);
+
+  return (    
       
+
+    <div className="App">
+    <Header/>
+       <Landingpage/>
+      <ActivitiesContainer />
+      welcome to App! development
+
     </div>
   );
 }
