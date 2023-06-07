@@ -1,10 +1,11 @@
+import HealthGoals from "./components/HealthGoals/HealthGoals";
 
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      App
+      <HealthGoals />
     </div>
   );
 }
