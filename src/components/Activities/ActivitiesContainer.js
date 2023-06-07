@@ -48,7 +48,8 @@ function ActivitiesContainer() {
   };
 
   return (
-    <div className="container min-h-screen min-w-full bg-sky-200 pt-5">
+    // <div className="container min-h-screen min-w-full bg-sky-200 pt-5">
+    <div className="container min-h-screen min-w-full pt-5 bg-green-200 ">
       <AddDailyActivity
         formData={formData}
         changeHandler={onChangeHandler}
