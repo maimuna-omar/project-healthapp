@@ -3,9 +3,6 @@ import Landingpage from './Components/Landingpage/Landingpage';
 import Header from './Components/Landingpage/Header';
 
   
-
-import ActivitiesContainer from "./Components/Activities/ActivitiesContainer";
-
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -29,8 +26,7 @@ function App() {
     <div className="App">
     <Header/>
        <Landingpage/>
-      <ActivitiesContainer />
-      welcome to App! development
+      
 
     </div>
   );

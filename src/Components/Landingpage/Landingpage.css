@@ -42,7 +42,7 @@
     
   }
   .header {
-    background-color: rgb(8, 130, 8);
+    background-color: rgb(58, 69, 58);
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -51,7 +51,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(99, 154, 16);
+    background-color: #509056;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -72,7 +72,7 @@
   }
   
   .app-introduction h1 {
-    background-color: rgb(22, 113, 22);
+    background-color: rgb(58, 116, 58);
     font-size: 30px;
     color: black;
   }
@@ -84,9 +84,12 @@
   }
   
   .key-features {
-    display: flex;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    
+    /* display: flex;
     justify-content: space-around;
-    margin-bottom: 40px;
+    margin-bottom: 40px; */
   }
   
   .feature {
@@ -108,7 +111,7 @@
     padding: 12px 20px;
     font-size: 18px;
     font-weight: bold;
-    color: black;
+    color: white;
     background-color:   rgb(8, 130, 8);
     border: none;
     border-radius: 4px;
