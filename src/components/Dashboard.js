@@ -5,7 +5,7 @@ const Dashboard = () => {
     return (
         <div className="flex justify-center">
           {/* Sidebar */}
-          <div className="w-1/3 bg-purple-300 p-4 h-screen">
+          <div className="w-1/3 bg-green-200 p-4 h-screen">
             <div className=".block justify-center mb-4">
                 <div className="w-fit h-fit  items-center">
                 <img
