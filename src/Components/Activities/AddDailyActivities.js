@@ -5,10 +5,10 @@ import dietGIF from "../../assets/Diet.gif";
 
 function AddDailyActivity() {
   return (
-    <div className="rounded-lg">
+    <div className="rounded-lg ">
       <div className="flex flex-col justify-center max-w-7xl m-auto bg-gray-700 ">
         <div className="text-center pt-6 pb-10 bg-gray-800 text-white">
-          <h1 className="text-2xl font-bold mb-2">Add Daily Activity</h1>
+          <h1 className="text-2xl font-bold mb-2">Add Your Daily Activity</h1>
           <p className="text-lg">
             Please fill out the form below to record your daily activity:
           </p>

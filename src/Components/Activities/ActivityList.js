@@ -1,46 +1,27 @@
 import React from "react";
 // import "./Activity.css";
-// import DailyActivity from "./DailyActivity";
+import DailyActivity from "./DailyActivity";
 
-function ActivityList({ activities, deleteHandler }) {
+function ActivityList({ userData, deleteActivity }) {
+  // console.log(userData);
   return (
-    <div>
-      <table>
-        <tbody>
-          <tr>
-            <th>
-              <h3>Date</h3>
-            </th>
-            <th>
-              <h3>Walking</h3>
-            </th>
-            <th>
-              <h3>WorkOut</h3>
-            </th>
-            <th>
-              <h3>Water intake</h3>
-            </th>
-            <th>
-              <h3>Calories consumed</h3>
-            </th>
-            <th>
-              <h3>Sleep Duration</h3>
-            </th>
+    <div className="flex justify-center bg-gray-700 max-w-7xl mx-auto max-h-screen">
+      <table className="w-full text-white">
+        <thead>
+          <tr className="bg-gray-800 text-base font-bold">
+            <th className="py-2 px-4">Date</th>
+            <th className="py-2 px-4">Walking</th>
+            <th className="py-2 px-4">WorkOut</th>
+            <th className="py-2 px-4">Water intake</th>
+            <th className="py-2 px-4 ">Sleep Duration</th>
             <th></th>
           </tr>
-          {/* {activities.map((activity) => (
-            <DailyActivity
-              key={activity.id}
-              id={activity.id}
-              date={activity.date}
-              Walking={activity.Walking}
-              WorkOut={activity.WorkOut}
-              Waterintake={activity.Waterintake}
-              Caloriesconsumed={activity.Caloriesconsumed}
-              SleepDuration={activity.SleepDuration}
-              deleteHandler={deleteHandler}
-            />
-          ))} */}
+        </thead>
+        <tbody>
+          {/* Render activity rows here */}
+          {userData.map((user) => (
+            <DailyActivity key={user.id} user={user} deleteActivity={deleteActivity}/>
+          ))}
         </tbody>
       </table>
     </div>
