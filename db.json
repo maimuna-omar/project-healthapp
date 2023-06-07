@@ -16,6 +16,14 @@
           "workOut": 0,
           "waterIntake": 4,
           "sleep": 18
+        },
+        {
+          "id": 2,
+          "date": "2023-06-05",
+          "walking": 10,
+          "workOut": 0,
+          "waterIntake": 4,
+          "sleep": 18
         }
       ]
     },
@@ -94,6 +102,14 @@
           "sleep": 18
         }
       ]
+    }
+  ],
+  "medicine": [
+    {
+      "name": "mara moja"
+    },
+    {
+      "name": "Maimuna"
     }
   ]
 }

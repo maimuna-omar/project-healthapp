@@ -3,7 +3,7 @@ import React from "react";
 function DailyActivity({ user, deleteActivity }) {
   const activity = user.activities[0]; // Access the first activity in the array
   const { date, sleep, walking, workOut, waterIntake } = activity;
-  console.log(date);
+  // console.log(date);
   
   return (
     <tr>

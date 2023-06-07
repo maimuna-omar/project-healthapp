@@ -5,6 +5,13 @@ import ActivityList from "./ActivityList";
 function ActivitiesContainer() {
   const [userData, setUserData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [formData, setFormData] = useState({
+    date: "",
+    walking: "",
+    workout: "",
+    waterintake: "",
+    sleep: "",
+  });
 
   const base_url =
     "https://my-json-server.typicode.com/Ken-Musau/JSONFile/users";
@@ -24,20 +31,38 @@ function ActivitiesContainer() {
       setLoading(false);
     }
   }
+  const onChangeHandler = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
 
   const deleteActivityHandler = () => {
-    console.log('This has been deleted');
+    console.log("This has been deleted");
   };
 
   return (
     <div className="container min-h-screen min-w-full bg-sky-200 pt-5">
-      <AddDailyActivity />
+      <AddDailyActivity
+        formData={formData}
+        changeHandler={onChangeHandler}
+        submitHandler={onSubmitHandler}
+      />
       {loading ? (
         <div className="flex justify-center items-center h-full">
           <p className="text-2xl font-bold text-gray-600">Loading...</p>
         </div>
       ) : (
-        <ActivityList userData={userData} deleteActivity={deleteActivityHandler}/>
+        <ActivityList
+          userData={userData}
+          deleteActivity={deleteActivityHandler}
+        />
       )}
     </div>
   );
