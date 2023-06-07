@@ -3,113 +3,122 @@
     {
       "id": 1,
       "name": "Kennedy",
-      "password": "",
       "email": "Kennedy@example.com",
-      "walkingGoal": 10000,
-      "waterIntakeGoal": 8,
-      "sleepGoal": 20,
-      "activities": [
+      "password": "kennedy1",
+      "goals": [
+        {
+          "walking": 10000,
+          "sleep": 5,
+          "waterIntake": 8,
+          "workoutTime": 30
+        }
+      ],
+      "dailyActivities": [
         {
           "id": 1,
-          "date": "2023-06-05",
-          "walking": 10,
-          "workOut": 0,
-          "waterIntake": 4,
-          "sleep": 18
-        },
-        {
-          "id": 2,
-          "date": "2023-06-05",
-          "walking": 10,
-          "workOut": 0,
-          "waterIntake": 4,
-          "sleep": 17
+          "date": "",
+          "walking": 10000,
+          "sleep": 5,
+          "waterIntake": 8,
+          "workoutTime": 30
         }
       ]
     },
     {
       "id": 2,
       "name": "Linet",
-      "password": "",
       "email": "Linet@example.com",
-      "walkingGoal": 100,
-      "waterIntakeGoal": 8,
-      "sleepGoal": 20,
-      "activities": [
+      "password": "linet2",
+      "goals": [
+        {
+          "walking": 10000,
+          "sleep": 5,
+          "waterIntake": 8,
+          "workoutTime": 30
+        }
+      ],
+      "dailyActivities": [
         {
           "id": 1,
-          "date": "2023-06-05",
-          "walking": 10,
-          "workOut": 0,
-          "waterIntake": 4,
-          "sleep": 18
+          "date": "",
+          "walking": 10000,
+          "sleep": 5,
+          "waterIntake": 8,
+          "workoutTime": 30
         }
       ]
     },
     {
       "id": 3,
       "name": "Maimuna",
-      "password": "",
       "email": "Maimuna@gmail.com",
-      "walkingGoal": 8000,
-      "waterIntakeGoal": 8,
-      "sleepGoal": 20,
-      "activities": [
+      "password": "maimuna3",
+      "goals": [
+        {
+          "walking": 10000,
+          "sleep": 5,
+          "waterIntake": 8,
+          "workoutTime": 30
+        }
+      ],
+      "dailyActivities": [
         {
           "id": 1,
-          "date": "2023-06-05",
-          "walking": 10,
-          "workOut": 0,
-          "waterIntake": 4,
-          "sleep": 18
+          "date": "",
+          "walking": 10000,
+          "sleep": 5,
+          "waterIntake": 8,
+          "workoutTime": 30
         }
       ]
     },
     {
       "id": 4,
       "name": "Maryanne",
-      "password": "",
       "email": "Maryanne@example.com",
-      "walkingGoal": 7000,
-      "waterIntakeGoal": 8,
-      "sleepGoal": 20,
-      "activities": [
+      "password": "maryanne4",
+      "goals": [
+        {
+          "walking": 10000,
+          "sleep": 5,
+          "waterIntake": 8,
+          "workoutTime": 30
+        }
+      ],
+      "dailyActivities": [
         {
           "id": 1,
-          "date": "2023-06-05",
-          "walking": 10,
-          "workOut": 0,
-          "waterIntake": 4,
-          "sleep": 18
+          "date": "",
+          "walking": 10000,
+          "sleep": 5,
+          "waterIntake": 8,
+          "workoutTime": 30
         }
       ]
     },
     {
       "id": 5,
       "name": "Moffat",
-      "password": "",
       "email": "Moffat@example.com",
-      "walkingGoal": 14000,
-      "waterIntakeGoal": 9,
-      "sleepGoal": 20,
-      "activities": [
+      "password": "moffat5",
+      "goals": [
+        {
+          "walking": 10000,
+          "sleep": 5,
+          "waterIntake": 8,
+          "workoutTime": 30
+        }
+      ],
+      "dailyActivities": [
         {
           "id": 1,
-          "date": "2023-06-05",
-          "walking": 10,
-          "workOut": 0,
-          "waterIntake": 4,
-          "sleep": 17
+          "date": "",
+          "walking": 10000,
+          "sleep": 5,
+          "waterIntake": 8,
+          "workoutTime": 30
         }
       ]
-    }
-  ],
-  "medicine": [
-    {
-      "name": "mara moja"
-    },
-    {
-      "name": "Maimuna"
     }
   ]
 }
