@@ -1,4 +1,3 @@
-
 import Landingpage from './Components/Landingpage/Landingpage';
 import Header from './Components/Landingpage/Header';
 
@@ -6,10 +5,12 @@ import Header from './Components/Landingpage/Header';
 
 import ActivitiesContainer from "./Components/Activities/ActivitiesContainer";
 
+
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./App.css";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   const [userData, setUserData] = useState([]);
@@ -23,13 +24,14 @@ function App() {
   }, []);
   console.log(userData);
 
-  return (    
-      
 
+  return (    
+     
     <div className="App">
     <Header/>
        <Landingpage/>
       <ActivitiesContainer />
+      <Dashboard users={userData}/>
       welcome to App! development
 
     </div>
