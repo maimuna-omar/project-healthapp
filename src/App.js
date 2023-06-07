@@ -1,3 +1,9 @@
+
+import Landingpage from './Components/Landingpage/Landingpage';
+import Header from './Components/Landingpage/Header';
+
+  
+
 import ActivitiesContainer from "./Components/Activities/ActivitiesContainer";
 
 import React from "react";
@@ -17,10 +23,15 @@ function App() {
   }, []);
   console.log(userData);
 
-  return (
+  return (    
+      
+
     <div className="App">
+    <Header/>
+       <Landingpage/>
       <ActivitiesContainer />
       welcome to App! development
+
     </div>
   );
 }
