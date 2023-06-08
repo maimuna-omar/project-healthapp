@@ -1,79 +1,33 @@
+// LoginSignup.js
+
 import React, { useState } from 'react';
 import './LoginSignup.css';
 
-const LoginSignup = () => {
-  const [isLogin, setIsLogin] = useState(false);
+const LoginSignup = (props) => {
+  const { isLogin, setIsLogin, currentUser, error, setError, handleLogin, handleSignup, userData } = props;
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState('');
-  const [currentUser, setCurrentUser] = useState(null);
 
-  const postUrl = 'http://localhost:8080/users';
-
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    fetch(`${postUrl}?email=${email}&password=${password}`)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.length > 0) {
-          console.log('Logged in successfully!');
-          setCurrentUser(data[0]);
-          setEmail('');
-          setPassword('');
-          setError('');
-        } else {
-          setError('Wrong email or password!');
-        }
-      })
-      .catch((error) => {
-        console.error('Error logging in:', error);
-        setError('An error occurred while logging in. Please try again later.');
-      });
+    setError('');
+  
+    if (isLogin) {
+      handleLogin(email, password);
+    } else {
+      handleSignup(name, email, password, confirmPassword);
+    }
+  
+    clearInputFields(); // Clear input fields after login or signup
   };
 
-   console.log(currentUser);
-   console.log(isLogin);
-  const handleSignup = (e) => {
-    e.preventDefault();
-    if (password.length < 8) {
-      setError('Password should be at least 8 characters long!');
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      setError('Passwords do not match!');
-      return;
-    }
-
-    const newUser = {
-      name: name,
-      email: email,
-      password: password,
-    };
-
-    fetch(postUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newUser),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-      console.log('User signed up successfully!', data);
-        setName('');
-        setEmail('');
-        setPassword('');
-        setConfirmPassword('');
-        setError('');
-      })
-      .catch((error) => {
-        console.error('Error signing up:', error);
-        setError('An error occurred while signing up. Please try again later.');
-      });
+  const clearInputFields = () => {
+    setName('');
+    setEmail('');
+    setPassword('');
+    setConfirmPassword('');
   };
 
   return (
@@ -89,7 +43,7 @@ const LoginSignup = () => {
           </div>
           <div className="form-container">
             <div className="form-inner">
-              <form onSubmit={isLogin ? handleLogin : handleSignup} className={isLogin ? '' : 'slide'}>
+              <form onSubmit={handleSubmit} className={isLogin ? '' : 'slide'}>
                 {!isLogin && (
                   <div className="field">
                     <label htmlFor="name">Name:</label>
@@ -156,14 +110,14 @@ const LoginSignup = () => {
             {isLogin ? (
               <div>
                 Don't have an account?{' '}
-                <span onClick={() => setIsLogin(false)} className="link">
+                <span onClick={() => { setIsLogin(false); clearInputFields(); }} className="link">
                   Sign Up
                 </span>
               </div>
             ) : (
               <div>
                 Already have an account?{' '}
-                <span onClick={() => setIsLogin(true)} className="link">
+                <span onClick={() => { setIsLogin(true); clearInputFields(); }} className="link">
                   Log In
                 </span>
               </div>
@@ -176,4 +130,3 @@ const LoginSignup = () => {
 };
 
 export default LoginSignup;
-
