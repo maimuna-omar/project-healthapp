@@ -1,9 +1,12 @@
+
+import HealthGoals from "./components/HealthGoals/HealthGoals";
 import Header from "./components/Landingpage/Header";
 import Landingpage from "./components/Landingpage/Landingpage";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./components/Landingpage/Landingpage.css";
+
 
 
 function App() {
@@ -21,9 +24,13 @@ function App() {
 
   return (
     <div className="App">
+
+      <HealthGoals />
+
      <Header/>
      <Landingpage/>
    
+
     </div>
   );
 }
