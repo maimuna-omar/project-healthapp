@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import AddDailyActivity from "./Components/Activities/AddDailyActivities";
 // import LoginSignup from './Components/Activities/DailyActivity';
-import Dashboard from './Components/Dashboard';
+import Dashboard from './components/Dashboard';
 // for log in i will place the path here
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
