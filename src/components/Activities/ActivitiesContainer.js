@@ -14,7 +14,7 @@ function ActivitiesContainer() {
   });
 
   const base_url =
-    "https://my-json-server.typicode.com/Ken-Musau/JSONFile/users";
+    "http://localhost:3000/users";
 
   useEffect(() => {
     fetchUserData();

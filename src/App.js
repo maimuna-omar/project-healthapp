@@ -1,13 +1,10 @@
-
-import HealthGoals from "./components/HealthGoals/HealthGoals";
 import Header from "./components/Landingpage/Header";
 import Landingpage from "./components/Landingpage/Landingpage";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./components/Landingpage/Landingpage.css";
-
-
+// import ActivitiesContainer from "./components/Activities/ActivitiesContainer";
 
 function App() {
   const [userData, setUserData] = useState([]);
@@ -21,17 +18,13 @@ function App() {
   }, []);
   console.log(userData);
 
-
   return (
     <div className="App">
+      {/* <HealthGoals /> */}
+      {/* <ActivitiesContainer /> */}
 
-
-      <HealthGoals />
-
-     <Header/>
-     <Landingpage/>
-
-
+      <Header />
+      <Landingpage />
     </div>
   );
 }
