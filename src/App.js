@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import LoginSignup from './Components/Login/LoginSignup';
+// import ActivitiesContainer from "./Components/Activities/ActivitiesContainer";
+import LoginSignup from "./Components/Login/LoginSignup";
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import "./App.css";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [error, setError] = useState('');
   const [userData, setUserData] = useState([]);
-
-  const baseUrl = 'http://localhost:8080/users';
+  const baseUrl =
+    " http://localhost:8080/users";
 
   useEffect(() => {
     fetch(baseUrl)
