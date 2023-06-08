@@ -17,8 +17,44 @@
       "dailyActivities": [
         {
           "id": 1,
-          "date": "",
+          "date": "2023-06-01",
           "walking": 10000,
+          "sleep": 5,
+          "waterIntake": 8,
+          "workoutTime": 30
+
+        },
+        {
+          "id": 2,
+          "date": "2023-06-02",
+          "walking": 10000,
+          "sleep": 5,
+          "waterIntake": 8,
+          "workoutTime": 30
+
+        },
+        {
+          "id": 3,
+          "date": "2023-06-03",
+          "walking": 7000,
+          "sleep": 5,
+          "waterIntake": 8,
+          "workoutTime": 30
+
+        },
+        {
+          "id": 4,
+          "date": "2023-06-04",
+          "walking": 900,
+          "sleep": 5,
+          "waterIntake": 8,
+          "workoutTime": 30
+
+        },
+        {
+          "id": 5,
+          "date": "2023-06-05",
+          "walking": 1000,
           "sleep": 5,
           "waterIntake": 8,
           "workoutTime": 30
