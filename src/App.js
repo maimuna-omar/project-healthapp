@@ -1,4 +1,4 @@
-import ActivitiesContainer from "./Components/Activities/ActivitiesContainer";
+import ActivitiesContainer from "./components/Activities/ActivitiesContainer";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
