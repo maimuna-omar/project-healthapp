@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import AddDailyActivity from "./components/Activities/AddDailyActivities";
+import Dashboard from "./components/Dashboard";
 // import LoginSignup from './Components/Activities/DailyActivity';
-import Dashboard from './components/Dashboard';
+
 // for log in i will place the path here
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 

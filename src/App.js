@@ -1,9 +1,10 @@
-import ActivitiesContainer from "./components/Activities/ActivitiesContainer";
+import Header from "./components/Landingpage/Header";
+import Landingpage from "./components/Landingpage/Landingpage";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import "./App.css";
-import Dashboard from "./components/Dashboard";
+import "./components/Landingpage/Landingpage.css";
+
 
 function App() {
   const [userData, setUserData] = useState([]);
@@ -20,9 +21,9 @@ function App() {
 
   return (
     <div className="App">
-      <ActivitiesContainer />
-      <Dashboard users={userData}/>
-      welcome to App! development
+     <Header/>
+     <Landingpage/>
+   
     </div>
   );
 }
