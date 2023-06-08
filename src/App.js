@@ -1,12 +1,10 @@
 
-import Landingpage from './Components/Landingpage/Landingpage';
-import Header from './Components/Landingpage/Header';
-
-  
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./App.css";
+import Landingpage from "./Components/Landingpage/Landingpage";
+import Header from "./Components/Landingpage/Header";
 
 function App() {
   const [userData, setUserData] = useState([]);
@@ -20,13 +18,12 @@ function App() {
   }, []);
   console.log(userData);
 
-  return (    
-      
 
+  return (    
+     
     <div className="App">
     <Header/>
        <Landingpage/>
-      
 
     </div>
   );
