@@ -4,6 +4,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./components/Landingpage/Landingpage.css";
+import LoginSignup from "./components/Login/LoginSignup";
 
 
 function App() {
@@ -18,12 +19,20 @@ function App() {
   }, []);
   console.log(userData);
 
+function clickHandler() {
+  console.log("button clicked");
+  return (
+    <LoginSignup />
+  )
+  
+}
+
 
   return (
     <div className="App">
      <Header/>
-     <Landingpage/>
-   
+     <Landingpage clickHandler={clickHandler}/>
+    
     </div>
   );
 }
