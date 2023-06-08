@@ -13,10 +13,11 @@
     }
   }
   body {
-    background-color: rgb(134, 174, 134);
+    background-color:rgba(233, 229, 229, 0.799)
+    
   }
-  .App-header {
-    background-color:  rgb(71, 74, 71);
+  /* .App-header {
+    background-color:  rgb(56, 157, 56);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -24,7 +25,7 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
-  }
+  } */
   
   .App-link {
     color: #61dafb;
@@ -42,7 +43,7 @@
     
   }
   .header {
-    background-color: rgb(58, 69, 58);
+    background-color: rgb(13, 159, 13);
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -51,14 +52,17 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #509056;
+    background-color: rgb(17, 180, 136);
+    color: #000;
+   font-size: x-large;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
+  
   .header a {
     text-decoration: none;
-    color:  black;
+    color:  rgb(5, 5, 5);
     font-weight: bold;
     transition: color 0.3s;
   }
@@ -72,8 +76,10 @@
   }
   
   .app-introduction h1 {
-    background-color: rgb(58, 116, 58);
+    background-color:rgb(211, 220, 218);
     font-size: 30px;
+    font-style: italic;
+    font-weight: bolder;
     color: black;
   }
   

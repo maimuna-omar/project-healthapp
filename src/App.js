@@ -1,17 +1,16 @@
-// import ActivitiesContainer from "./Components/Activities/ActivitiesContainer";
-import LoginSignup from "./Components/Login/LoginSignup";
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
-import "./App.css";
+import React, { useState, useEffect } from 'react';
+import './App.css';
+import Header from './components/Landingpage/Header';
+import Landingpage from './components/Landingpage/Landingpage';
+import LoginSignup from './components/Login/LoginSignup';
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [error, setError] = useState('');
   const [userData, setUserData] = useState([]);
-  const baseUrl =
-    " http://localhost:8080/users";
+  const baseUrl = 'http://localhost:8080/users';
+  const [showLoginSignup, setShowLoginSignup] = useState(false);
 
   useEffect(() => {
     fetch(baseUrl)
@@ -110,9 +109,17 @@ function App() {
     setUserData([]);
   };
 
+  const handleGetStarted = () => {
+    setShowLoginSignup(!showLoginSignup);
+  };
+  
+
   return (
     <div className="App">
-      <LoginSignup
+      <Header isLogin= {isLogin} />
+      <Landingpage handleGetStarted={handleGetStarted} />
+      {showLoginSignup && (
+     <LoginSignup
         isLogin={isLogin}
         setIsLogin={setIsLogin}
         currentUser={currentUser}
@@ -121,7 +128,10 @@ function App() {
         handleLogin={handleLogin}
         handleSignup={handleSignup}
         userData={userData}
-      />
+          />
+)}
+
+      
     </div>
   );
 }
