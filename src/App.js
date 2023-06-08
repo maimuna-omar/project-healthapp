@@ -9,12 +9,17 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 
+import "./components/Landingpage/Landingpage.css";
+import { useNavigate } from "react-router-dom";
+
+
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [error, setError] = useState('');
   const [userData, setUserData] = useState([]);
+  const navigate = useNavigate()
   const baseUrl =
     "https://my-json-server.typicode.com/Wambuiwambugu/Group-8-REST-API/users";
 
@@ -27,6 +32,14 @@ function App() {
         setError('An error occurred while retrieving user data. Please try again later.');
       });
   }, []);
+
+
+function clickHandler() {
+  navigate("/login");
+  
+
+}
+
 
   const handleLogin = (email, password) => {
     fetch(`${baseUrl}?email=${email}&password=${password}`)
@@ -115,9 +128,13 @@ function App() {
     setUserData([]);
   };
 
+
   return (
     <div className="App">
      <Header/>
+
+     <Landingpage clickHandler={clickHandler}/>
+
        <Landingpage/>
        {userData.length > 0 ? <Dashboard userData={userData} /> : <p>Loading...</p>}
       <ActivitiesContainer />
@@ -131,6 +148,7 @@ function App() {
         handleSignup={handleSignup}
         userData={userData}
       />
+
 
     </div>
   );
