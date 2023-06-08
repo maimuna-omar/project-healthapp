@@ -1,9 +1,13 @@
-import ActivitiesContainer from "./components/Activities/ActivitiesContainer";
 
+import HealthGoals from "./components/HealthGoals/HealthGoals";
+import Header from "./components/Landingpage/Header";
+import Landingpage from "./components/Landingpage/Landingpage";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import "./App.css";
+import "./components/Landingpage/Landingpage.css";
+
+
 
 function App() {
   const [userData, setUserData] = useState([]);
@@ -17,9 +21,17 @@ function App() {
   }, []);
   console.log(userData);
 
+
   return (
     <div className="App">
-      <ActivitiesContainer />
+
+
+      <HealthGoals />
+
+     <Header/>
+     <Landingpage/>
+
+
     </div>
   );
 }
