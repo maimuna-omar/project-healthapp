@@ -3,8 +3,9 @@
 import React, { useState } from 'react';
 import './LoginSignup.css';
 
+
 const LoginSignup = (props) => {
-  const { isLogin, setIsLogin, currentUser, error, setError, handleLogin, handleSignup, userData } = props;
+  const { isLogin, setIsLogin, currentUser, error, setError, handleLogin, handleSignup,  } = props;
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

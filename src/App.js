@@ -97,6 +97,7 @@ function App() {
       });
   };
 
+  
   const clearInputFields = () => {
     // Clear input fields
     setIsLogin(false);
