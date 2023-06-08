@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import AddDailyActivity from "./components/Activities/AddDailyActivities";
-import Dashboard from "./components/Dashboard";
+// import Dashboard from "./Components/Dashboard/Dashboard";
 import LoginSignup from './components/Activities/DailyActivity';
 
 // for log in i will place the path here
@@ -13,7 +13,7 @@ const router = createBrowserRouter (
   [{ path: '/', element:<App/>},
   { path: '/healthgoals', element:<App/>},
   { path: '/dailyactivity', element:<AddDailyActivity/>},
-  { path: '/dashboard', element:<Dashboard/>},
+  // { path: '/dashboard', element:<Dashboard/>},
   { path: '/loginsignup', element:<LoginSignup />}
 
 ]
