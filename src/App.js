@@ -4,11 +4,12 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./components/Landingpage/Landingpage.css";
-import LoginSignup from "./components/Login/LoginSignup";
+import { useNavigate } from "react-router-dom";
 
 
 function App() {
   const [userData, setUserData] = useState([]);
+  const navigate = useNavigate()
   const baseUrl =
     "https://my-json-server.typicode.com/Wambuiwambugu/Group-8-REST-API/users";
 
@@ -20,11 +21,9 @@ function App() {
   console.log(userData);
 
 function clickHandler() {
-  console.log("button clicked");
-  return (
-    <LoginSignup />
-  )
+  navigate("/login");
   
+
 }
 
 

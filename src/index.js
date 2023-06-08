@@ -5,11 +5,13 @@ import './index.css';
 import App from './App';
 import AddDailyActivity from "./components/Activities/AddDailyActivities";
 import Dashboard from "./components/Dashboard";
+import LoginSignup from './components/Login/LoginSignup';
 const router = createBrowserRouter (
   [{ path: '/', element:<App/>},
   { path: '/dashboard', element:<Dashboard/>},
   { path: '/healthgoals', element:<App/>},
   { path: '/dailyactivity', element:<AddDailyActivity/>},
+  { path: '/login', element:<LoginSignup/>},
 ]
 )
 const root = ReactDOM.createRoot(document.getElementById('root'));
