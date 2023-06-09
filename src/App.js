@@ -1,20 +1,32 @@
-import LoginSignup from "./components/Login/LoginSignup";
-import Header from "./components/Landingpage/Header";
-import Landingpage from "./components/Landingpage/Landingpage";
-import "./components/Landingpage/Landingpage.css";
-import ActivitiesContainer from "./components/Activities/ActivitiesContainer";
 
+
+import Landingpage from './components/Landingpage/Landingpage';
+import Header from './components/Landingpage/Header';
+// import ActivitiesContainer from './components/Activities/ActivitiesContainer'
+// import Dashboard from "./components/Dashboard/Dashboard";
+import LoginSignup from './components/Login/LoginSignup';
+// import LoginSignup from "./Components/Login/LoginSignup";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-// import "./App.css";
+
+
+import { useNavigate } from "react-router-dom";
+
+
+
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [error, setError] = useState("");
   const [userData, setUserData] = useState([]);
-  const baseUrl = " http://localhost:3000/users";
+
+  const navigate = useNavigate()
+  // const baseUrl =
+  const baseUrl = 'http://localhost:8080/users';
+    // "https://my-json-server.typicode.com/Wambuiwambugu/Group-8-REST-API/users";
+
 
   useEffect(() => {
     fetch(baseUrl)
@@ -27,6 +39,15 @@ function App() {
         );
       });
   }, []);
+
+
+function clickHandler() {
+  navigate("/login");
+  
+
+}
+
+
 
   const handleLogin = (email, password) => {
     fetch(`${baseUrl}?email=${email}&password=${password}`)
@@ -116,32 +137,22 @@ function App() {
   };
 console.log(currentUser);
 
-  return (
-    <div className="App">
-      {/* <Header />
-      <Landingpage /> */}
-
-      {/* <ActivitiesContainer /> */}
-
-      {!currentUser ? (
-        <LoginSignup
-          isLogin={isLogin}
-          setIsLogin={setIsLogin}
-          currentUser={currentUser}
-          error={error}
-          setError={setError}
-          handleLogin={handleLogin}
-          handleSignup={handleSignup}
-          userData={userData}
-        />
-      ) : (
-        <ActivitiesContainer
-          currentUser={currentUser}
-          baseUrl={baseUrl}
-          // handleLogout={handleLogout}
-        />
-      )}
-    </div>
+  return (<div className="App">
+    <Header />
+    <Landingpage clickHandler={clickHandler} />
+    {isLogin ? (
+      <LoginSignup
+        isLogin={isLogin}
+        setIsLogin={setIsLogin}
+        currentUser={currentUser}
+        error={error}
+        setError={setError}
+        handleLogin={handleLogin}
+        handleSignup={handleSignup}
+        userData={userData}
+      />
+    ) : null}
+  </div>
   );
 }
 
