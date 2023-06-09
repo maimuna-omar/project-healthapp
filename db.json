@@ -16,10 +16,10 @@
       "dailyActivities": [
         {
           "id": 1,
-          "date": "",
+          "date": "06/15/2023",
           "walking": 10000,
           "sleep": 5,
-          "waterIntake": 8,
+          "waterIntake": 9,
           "workoutTime": 30
         }
       ]
@@ -141,6 +141,50 @@
         }
       ],
       "id": 6
+    },
+    {
+      "name": "me",
+      "email": "me@gmail.com",
+      "password": "12345678",
+      "goals": {
+        "walking": 0,
+        "sleep": 0,
+        "waterIntake": 0,
+        "workoutTime": 0
+      },
+      "dailyActivities": [
+        {
+          "id": 1,
+          "date": "",
+          "walking": 0,
+          "sleep": 0,
+          "waterIntake": 0,
+          "workoutTime": 0
+        }
+      ],
+      "id": 7
+    },
+    {
+      "name": "steve",
+      "email": "steve@gmail.com",
+      "password": "12345678",
+      "goals": {
+        "walking": 0,
+        "sleep": 0,
+        "waterIntake": 0,
+        "workoutTime": 0
+      },
+      "dailyActivities": [
+        {
+          "id": 1,
+          "date": "",
+          "walking": 0,
+          "sleep": 0,
+          "waterIntake": 0,
+          "workoutTime": 0
+        }
+      ],
+      "id": 8
     }
-    ]
+  ]
 }

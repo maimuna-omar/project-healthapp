@@ -1,34 +1,41 @@
 // LoginSignup.js
 
-import React, { useState } from 'react';
-import './LoginSignup.css';
-
+import React, { useState } from "react";
+import "./LoginSignup.css";
 
 const LoginSignup = (props) => {
-  const { isLogin, setIsLogin, currentUser, error, setError, handleLogin, handleSignup,  } = props;
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const {
+    isLogin,
+    setIsLogin,
+    currentUser,
+    error,
+    setError,
+    handleLogin,
+    handleSignup,
+  } = props;
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError('');
-  
+    setError("");
+
     if (isLogin) {
       handleLogin(email, password);
     } else {
       handleSignup(name, email, password, confirmPassword);
     }
-  
+
     clearInputFields(); // Clear input fields after login or signup
   };
 
   const clearInputFields = () => {
-    setName('');
-    setEmail('');
-    setPassword('');
-    setConfirmPassword('');
+    setName("");
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
   };
 
   return (
@@ -37,14 +44,14 @@ const LoginSignup = (props) => {
         <div className="wrapper">
           <div className="title-text">
             {isLogin ? (
-              <div className={`title ${isLogin ? '' : 'slide'}`}>Log In</div>
+              <div className={`title ${isLogin ? "" : "slide"}`}>Log In</div>
             ) : (
-              <div className={`title ${isLogin ? 'slide' : ''}`}>Sign Up</div>
+              <div className={`title ${isLogin ? "slide" : ""}`}>Sign Up</div>
             )}
           </div>
           <div className="form-container">
             <div className="form-inner">
-              <form onSubmit={handleSubmit} className={isLogin ? '' : 'slide'}>
+              <form onSubmit={handleSubmit} className={isLogin ? "" : "slide"}>
                 {!isLogin && (
                   <div className="field">
                     <label htmlFor="name">Name:</label>
@@ -99,9 +106,13 @@ const LoginSignup = (props) => {
 
                 <div className="field">
                   <div className="error">{error}</div>
-                  {currentUser && <div className="success">Logged in as {currentUser.name}!</div>}
+                  {currentUser && (
+                    <div className="success">
+                      Logged in as {currentUser.name}!
+                    </div>
+                  )}
                   <button type="submit" className="submit-btn">
-                    {isLogin ? 'Log In' : 'Sign Up'}
+                    {isLogin ? "Log In" : "Sign Up"}
                   </button>
                 </div>
               </form>
@@ -110,15 +121,27 @@ const LoginSignup = (props) => {
           <div className="toggle-link">
             {isLogin ? (
               <div>
-                Don't have an account?{' '}
-                <span onClick={() => { setIsLogin(false); clearInputFields(); }} className="link">
+                Don't have an account?{" "}
+                <span
+                  onClick={() => {
+                    setIsLogin(false);
+                    clearInputFields();
+                  }}
+                  className="link"
+                >
                   Sign Up
                 </span>
               </div>
             ) : (
               <div>
-                Already have an account?{' '}
-                <span onClick={() => { setIsLogin(true); clearInputFields(); }} className="link">
+                Already have an account?
+                <span
+                  onClick={() => {
+                    setIsLogin(true);
+                    clearInputFields();
+                  }}
+                  className="link"
+                >
                   Log In
                 </span>
               </div>

@@ -2,7 +2,7 @@ import  './Landingpage.css'
 import image1 from '../../Images/image1.gif';
 import image2 from '../../Images/image2.gif';
 import image3 from '../../Images/image3.gif';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 const Landingpage = () => {
@@ -31,7 +31,8 @@ const Landingpage = () => {
             <p className="small-paragraph">Stay hydrated and energized with water - the essential elixir for a healthier body and sharper mind.</p>
           </div>
         </div>
-        <Link to="/login" className="cta-button">Get Started</Link>
+        {/* <Link to="/login" className="cta-button">Get Started</Link> */}
+        <button to="/login" className="cta-button">Get Started</button>
         
       </div>
      
