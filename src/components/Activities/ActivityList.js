@@ -29,3 +29,6 @@ function ActivityList({ userData, deleteActivity }) {
 }
 
 export default ActivityList;
+
+
+

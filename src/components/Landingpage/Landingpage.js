@@ -2,7 +2,9 @@ import  './Landingpage.css'
 import image1 from '../../Images/image1.gif';
 import image2 from '../../Images/image2.gif';
 import image3 from '../../Images/image3.gif';
+
 // import "./components/Landingpage/Landingpage.css";
+
 
 
 
@@ -34,6 +36,7 @@ const Landingpage = ({clickHandler}) => {
           </div> */}
         </div>
         {/* <Link to="/login" className="cta-button">Get Started</Link> */}
+
         {/* <button className="cta-button" onClick={()=>clickHandler()}>Get Started</button> */}
         <button className="cta-button" onClick={clickHandler}>Get Started</button>
 
