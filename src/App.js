@@ -1,15 +1,15 @@
 
-import Landingpage from './Components/Landingpage/Landingpage';
-import Header from './Components/Landingpage/Header';
-import ActivitiesContainer from './Components/Activities/ActivitiesContainer'
-import Dashboard from "./Components/Dashboard/Dashboard";
-import LoginSignup from './Components/Login/LoginSignup';
-import LoginSignup from "./Components/Login/LoginSignup";
+import Landingpage from './components/Landingpage/Landingpage';
+import Header from './components/Landingpage/Header';
+// import ActivitiesContainer from './components/Activities/ActivitiesContainer'
+// import Dashboard from "./components/Dashboard/Dashboard";
+import LoginSignup from './components/Login/LoginSignup';
+// import LoginSignup from "./Components/Login/LoginSignup";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 
-import "./components/Landingpage/Landingpage.css";
+
 import { useNavigate } from "react-router-dom";
 
 
@@ -20,8 +20,9 @@ function App() {
   const [error, setError] = useState('');
   const [userData, setUserData] = useState([]);
   const navigate = useNavigate()
-  const baseUrl =
-    "https://my-json-server.typicode.com/Wambuiwambugu/Group-8-REST-API/users";
+  // const baseUrl =
+  const baseUrl = 'http://localhost:8080/users';
+    // "https://my-json-server.typicode.com/Wambuiwambugu/Group-8-REST-API/users";
 
   useEffect(() => {
     fetch(baseUrl)
@@ -39,6 +40,7 @@ function clickHandler() {
   
 
 }
+
 
 
   const handleLogin = (email, password) => {
@@ -129,15 +131,10 @@ function clickHandler() {
   };
 
 
-  return (
-    <div className="App">
-     <Header/>
-
-     <Landingpage clickHandler={clickHandler}/>
-
-       <Landingpage/>
-       {userData.length > 0 ? <Dashboard userData={userData} /> : <p>Loading...</p>}
-      <ActivitiesContainer />
+  return (<div className="App">
+    <Header />
+    <Landingpage clickHandler={clickHandler} />
+    {isLogin ? (
       <LoginSignup
         isLogin={isLogin}
         setIsLogin={setIsLogin}
@@ -148,9 +145,8 @@ function clickHandler() {
         handleSignup={handleSignup}
         userData={userData}
       />
-
-
-    </div>
+    ) : null}
+  </div>
   );
 }
 
