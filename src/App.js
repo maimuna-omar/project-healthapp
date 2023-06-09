@@ -1,13 +1,20 @@
 import LoginSignup from "./components/Login/LoginSignup";
+import Header from "./components/Landingpage/Header";
+import Landingpage from "./components/Landingpage/Landingpage";
+import "./components/Landingpage/Landingpage.css";
 import ActivitiesContainer from "./components/Activities/ActivitiesContainer";
-import React, { useState, useEffect } from "react";
+
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+// import "./App.css";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [error, setError] = useState("");
   const [userData, setUserData] = useState([]);
-  const baseUrl = "http://localhost:3000/users";
+  const baseUrl = " http://localhost:3000/users";
 
   useEffect(() => {
     fetch(baseUrl)
@@ -25,11 +32,11 @@ function App() {
     fetch(`${baseUrl}?email=${email}&password=${password}`)
       .then((response) => response.json())
       .then((data) => {
-        setCurrentUser(data[0]);
 
+        setCurrentUser(data[0]);
         // if (data.length > 0) {
         //   console.log("Logged in successfully!");
-        //   setCurrentUser(data);
+        //   setCurrentUser(data[0]);
         //   setError("");
         //   clearInputFields();
         // } else {
@@ -81,7 +88,7 @@ function App() {
       ],
     };
 
-    fetch(baseUrl, {
+    fetch("http://localhost:3000/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -101,15 +108,21 @@ function App() {
   };
 
   const clearInputFields = () => {
+    // Clear input fields
     setIsLogin(false);
     setCurrentUser(null);
     setError("");
     setUserData([]);
   };
+console.log(currentUser);
 
   return (
-    <div>
-      {console.log(userData, currentUser)}
+    <div className="App">
+      {/* <Header />
+      <Landingpage /> */}
+
+      {/* <ActivitiesContainer /> */}
+
       {!currentUser ? (
         <LoginSignup
           isLogin={isLogin}
@@ -124,32 +137,10 @@ function App() {
       ) : (
         <ActivitiesContainer
           currentUser={currentUser}
+          baseUrl={baseUrl}
           // handleLogout={handleLogout}
         />
       )}
-      {/* Uncomment the components you want to render */}
-      {/* <ActivitiesContainer currentUser={currentUser} /> */}
-      {/* <HealthGoals /> */}
-      {/* <Header /> */}
-      {/* <Landingpage /> */}
-      {/* Render the LoginSignup component conditionally */}
-      {/* 
-      <LoginSignup
-        isLogin={isLogin}
-        setIsLogin={setIsLogin}
-        currentUser={currentUser}
-        error={error}
-        setError={setError}
-        handleLogin={handleLogin}
-        handleSignup={handleSignup}
-        userData={userData}
-      />
-      {currentUser && <ActivitiesContainer currentUser={currentUser} />}
-      {currentUser ? (
-        <ActivitiesContainer currentUser={currentUser} />
-      ) : (
-        
-      )} */}
     </div>
   );
 }

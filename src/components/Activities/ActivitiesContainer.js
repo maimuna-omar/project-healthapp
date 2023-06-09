@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import AddDailyActivity from "./AddDailyActivities";
 import ActivityList from "./ActivityList";
 
-function ActivitiesContainer({ currentUser }) {
-
+function ActivitiesContainer({ currentUser, baseUrl }) {
   const [userData, setUserData] = useState([]);
   // const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
@@ -14,34 +13,22 @@ function ActivitiesContainer({ currentUser }) {
     sleep: "",
   });
 
+  // console.log(userData);
+  
+
   useEffect(() => {
     if (currentUser) {
       setUserData([currentUser]);
     }
   }, [currentUser]);
 
-  console.log("what");
-  // setUserData(currentUser)
-
-  // const base_url = "http://localhost:3000/users";
-
-  // useEffect(() => {
-  //   fetchUserData();
-  // }, []);
-
-  // async function fetchUserData() {
-  //   try {
-  //     const res = await fetch(base_url);
-  //     const fetchedUserData = await res.json();
-  //     setUserData(fetchedUserData);
-  //     // setLoading(false);
-  //   } catch (error) {
-  //     console.log(error);
-  //     // setLoading(false);
-  //   }
-  // }
-
-  // console.log(userData);
+  const ActivityToPost = {
+    date: formData.date,
+    walking: formData.walking,
+    sleep: formData.sleep,
+    waterIntake: formData.waterintake,
+    workoutTime: formData.workout,
+  };
 
   const onChangeHandler = (e) => {
     setFormData({
@@ -52,9 +39,27 @@ function ActivitiesContainer({ currentUser }) {
 
   // console.log(userData);
 
+  async function postUserActivities() {
+    try {
+      const resp = await fetch(baseUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(ActivityToPost),
+      });
+      const data = await resp.json();
+      console.log(data);
+      // Handle the response data here
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   const onSubmitHandler = (e) => {
     e.preventDefault();
     console.log(formData);
+    postUserActivities();
   };
 
   const deleteActivityHandler = () => {
@@ -62,7 +67,7 @@ function ActivitiesContainer({ currentUser }) {
   };
 
   return (
-    <div className="container min-h-screen min-w-full pt-5 bg-blue-200">
+    <div className="min-h-screen min-w-full pt-5 bg-blue-200">
       <AddDailyActivity
         formData={formData}
         changeHandler={onChangeHandler}
