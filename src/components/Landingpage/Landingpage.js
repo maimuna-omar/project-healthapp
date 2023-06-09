@@ -2,6 +2,8 @@ import  './Landingpage.css'
 import image1 from '../../Images/image1.gif';
 import image2 from '../../Images/image2.gif';
 import image3 from '../../Images/image3.gif';
+// import "./components/Landingpage/Landingpage.css";
+
 
 
 
@@ -22,8 +24,8 @@ const Landingpage = ({clickHandler}) => {
           
           <div className="feature">
           <img src={image3} alt="water" />
-                    <h3>Plan your sleep</h3>
-            <p className="small-paragraph">Prioritize your sleep for a brighter tomorrow - adequate rest fuels your productivity, enhances mood, and fortifies your overall well-being.</p>
+                    {/* <h3>Plan your sleep</h3> */}
+            {/* <p className="small-paragraph">Prioritize your sleep for a brighter tomorrow - adequate rest fuels your productivity, enhances mood, and fortifies your overall well-being.</p> */}
           </div>
           {/* <div className="feature">
           <img src={image2} alt="water" />

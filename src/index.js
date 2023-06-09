@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import AddDailyActivity from "./components/Activities/AddDailyActivities";
-import Dashboard from "./components/Dashboard";
 import LoginSignup from './components/Login/LoginSignup';
+import Dashboard from "./components/Dashboard/Dashboard";
+import AddDailyActivity from "./components/Activities/AddDailyActivities";
+
+
 const router = createBrowserRouter (
   [{ path: '/', element:<App/>},
   { path: '/dashboard', element:<Dashboard/>},
