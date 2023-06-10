@@ -3,7 +3,6 @@ import dbData from './db.json'
 import Chart from "./Chart"
 import Select from 'react-select'
 
-
 const Dashboard = ({userData}) => {
     const user = dbData.users[0];
     const activities = dbData.users[0].dailyActivities;
@@ -90,3 +89,4 @@ const Dashboard = ({userData}) => {
   
 
 export default Dashboard;
+//
