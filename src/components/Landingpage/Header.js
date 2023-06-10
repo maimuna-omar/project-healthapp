@@ -11,7 +11,7 @@ function Header({isLogin}) {
         <Link to='/healthgoals'>HealthGoals</Link>
         <Link to='/dailyactivity'>Daily Activity</Link>
         <Link to='/dashboard'>Dashboard</Link>
-  
+      
     </div>
     
   )
@@ -21,9 +21,11 @@ function Header({isLogin}) {
     <div className='header'>
       
         <Link to='/'>Home</Link>
-        <Link to='/loginsignup'>Login</Link> 
+        <Link to='/loginSignup'>Login</Link>
+      
     </div>
+    
   )
 }
 
-export default Header;
+export default Header

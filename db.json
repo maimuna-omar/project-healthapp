@@ -1,4 +1,3 @@
-
 {
   "users": [
     {
@@ -142,7 +141,28 @@
         }
       ],
       "id": 6
+    },
+    {
+      "name": "maya omar",
+      "email": "sumeiyashukrinoor@gmail.com",
+      "password": "123456789",
+      "goals": {
+        "walking": 0,
+        "sleep": 0,
+        "waterIntake": 0,
+        "workoutTime": 0
+      },
+      "dailyActivities": [
+        {
+          "id": 1,
+          "date": "",
+          "walking": 0,
+          "sleep": 0,
+          "waterIntake": 0,
+          "workoutTime": 0
+        }
+      ],
+      "id": 7
     }
-    ]
+  ]
 }
-

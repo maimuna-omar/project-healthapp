@@ -3,10 +3,11 @@ import './App.css';
 import Header from './components/Landingpage/Header';
 import Landingpage from './components/Landingpage/Landingpage';
 import LoginSignup from './components/Login/LoginSignup';
+import Dashboard from './Dashboard'
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState([null]);
   const [error, setError] = useState('');
   const [userData, setUserData] = useState([]);
   const baseUrl = 'http://localhost:8080/users';
@@ -26,20 +27,25 @@ function App() {
     fetch(`${baseUrl}?email=${email}&password=${password}`)
       .then((response) => response.json())
       .then((data) => {
-        if (data.length > 0) {
-          console.log('Logged in successfully!');
-          setCurrentUser(data[0]);
-          setError('');
-          clearInputFields();
-        } else {
-          setError('Wrong email or password!');
-        }
+        setCurrentUser(data[0]);
+        // if (data.length > 0) {
+        //   console.log('Logged in successfully!');
+        //   console.log(data[0])
+       
+        //   setCurrentUser(data[0]);
+        //   setError('');
+        //   clearInputFields();
+        // } else {
+        //   setError('Wrong email or password!');
+        // }
       })
       .catch((error) => {
         console.error('Error logging in:', error);
         setError('An error occurred while logging in. Please try again later.');
       });
   };
+      
+  console.log(currentUser);
 
   const handleSignup = (name, email, password, confirmPassword) => {
     const existingUser = userData.find((user) => user.email === email);
@@ -129,8 +135,9 @@ function App() {
         handleSignup={handleSignup}
         userData={userData}
           />
-)}
 
+)}
+ <Dashboard />   
       
     </div>
   );
