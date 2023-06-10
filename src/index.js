@@ -9,12 +9,14 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import AddDailyActivity from "./components/Activities/AddDailyActivities";
 
 
+
 const router = createBrowserRouter (
   [{ path: '/', element:<App/>},
   { path: '/dashboard', element:<Dashboard/>},
   { path: '/healthgoals', element:<App/>},
   { path: '/dailyactivity', element:<AddDailyActivity/>},
   { path: '/login', element:<LoginSignup/>},
+
 ]
 )
 const root = ReactDOM.createRoot(document.getElementById('root'));

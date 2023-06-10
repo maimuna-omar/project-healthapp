@@ -1,12 +1,10 @@
-import  './Landingpage.css'
+import React from 'react';
+import './Landingpage.css';
 import image1 from '../../Images/image1.gif';
 import image2 from '../../Images/image2.gif';
 import image3 from '../../Images/image3.gif';
 
 // import "./components/Landingpage/Landingpage.css";
-
-
-
 
 
 const Landingpage = ({clickHandler}) => {
@@ -40,10 +38,13 @@ const Landingpage = ({clickHandler}) => {
         {/* <button className="cta-button" onClick={()=>clickHandler()}>Get Started</button> */}
         <button className="cta-button" onClick={clickHandler}>Get Started</button>
 
-       
+      
       </div>
-     
-    );
-  };
-  
-  export default Landingpage;
+      <button onClick={handleGetStarted} className="cta-button">
+        Get Started
+      </button>
+    </div>
+  );
+};
+
+export default Landingpage;

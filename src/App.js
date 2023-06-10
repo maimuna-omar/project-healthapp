@@ -1,5 +1,3 @@
-
-
 import Landingpage from './components/Landingpage/Landingpage';
 import Header from './components/Landingpage/Header';
 // import ActivitiesContainer from './components/Activities/ActivitiesContainer'
@@ -23,11 +21,8 @@ function App() {
   const [userData, setUserData] = useState([]);
 
   const navigate = useNavigate()
-  // const baseUrl =
+
   const baseUrl = 'http://localhost:8080/users';
-    // "https://my-json-server.typicode.com/Wambuiwambugu/Group-8-REST-API/users";
-
-
   useEffect(() => {
     fetch(baseUrl)
       .then((res) => res.json())
@@ -47,12 +42,11 @@ function clickHandler() {
 
 }
 
-
-
   const handleLogin = (email, password) => {
     fetch(`${baseUrl}?email=${email}&password=${password}`)
       .then((response) => response.json())
       .then((data) => {
+
 
         setCurrentUser(data[0]);
         // if (data.length > 0) {
@@ -62,6 +56,7 @@ function clickHandler() {
         //   clearInputFields();
         // } else {
         //   setError("Wrong email or password!");
+
         // }
       })
       .catch((error) => {
@@ -69,6 +64,8 @@ function clickHandler() {
         setError("An error occurred while logging in. Please try again later.");
       });
   };
+      
+  console.log(currentUser);
 
   const handleSignup = (name, email, password, confirmPassword) => {
     const existingUser = userData.find((user) => user.email === email);
@@ -150,9 +147,11 @@ console.log(currentUser);
         handleLogin={handleLogin}
         handleSignup={handleSignup}
         userData={userData}
+
       />
     ) : null}
   </div>
+
   );
 }
 
