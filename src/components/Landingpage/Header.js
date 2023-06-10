@@ -28,4 +28,4 @@ function Header({isLogin}) {
   )
 }
 
-export default Header
+export default Header;

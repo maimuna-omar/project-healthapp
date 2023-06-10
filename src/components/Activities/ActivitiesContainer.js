@@ -2,43 +2,82 @@ import React, { useState, useEffect } from "react";
 import AddDailyActivity from "./AddDailyActivities";
 import ActivityList from "./ActivityList";
 
-function ActivitiesContainer() {
+function ActivitiesContainer({ currentUser, baseUrl }) {
   const [userData, setUserData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
+  const [formData, setFormData] = useState({
+    date: "",
+    walking: "",
+    workout: "",
+    waterintake: "",
+    sleep: "",
+  });
 
-  const base_url =
-    "https://my-json-server.typicode.com/Ken-Musau/JSONFile/users";
+  // console.log(userData);
+  
 
   useEffect(() => {
-    fetchUserData();
-  }, []);
+    if (currentUser) {
+      setUserData([currentUser]);
+    }
+  }, [currentUser]);
 
-  async function fetchUserData() {
+  const ActivityToPost = {
+    date: formData.date,
+    walking: formData.walking,
+    sleep: formData.sleep,
+    waterIntake: formData.waterintake,
+    workoutTime: formData.workout,
+  };
+
+  const onChangeHandler = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // console.log(userData);
+
+  async function postUserActivities() {
     try {
-      const res = await fetch(base_url);
-      const fetchedUserData = await res.json();
-      setUserData(fetchedUserData);
-      setLoading(false);
+      const resp = await fetch(baseUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(ActivityToPost),
+      });
+      const data = await resp.json();
+      console.log(data);
+      // Handle the response data here
     } catch (error) {
       console.log(error);
-      setLoading(false);
     }
   }
 
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    postUserActivities();
+  };
+
   const deleteActivityHandler = () => {
-    console.log('This has been deleted');
+    console.log("This has been deleted");
   };
 
   return (
-    <div className="container min-h-screen min-w-full bg-sky-200 pt-5">
-      <AddDailyActivity />
-      {loading ? (
-        <div className="flex justify-center items-center h-full">
-          <p className="text-2xl font-bold text-gray-600">Loading...</p>
-        </div>
-      ) : (
-        <ActivityList userData={userData} deleteActivity={deleteActivityHandler}/>
-      )}
+    <div className="min-h-screen min-w-full pt-5 bg-blue-200">
+      <AddDailyActivity
+        formData={formData}
+        changeHandler={onChangeHandler}
+        submitHandler={onSubmitHandler}
+      />
+
+      <ActivityList
+        userData={userData}
+        deleteActivity={deleteActivityHandler}
+      />
     </div>
   );
 }
