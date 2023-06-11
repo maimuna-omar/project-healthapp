@@ -16,7 +16,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [error, setError] = useState("");
   const [userData, setUserData] = useState([]);
-  const baseUrl = "https://my-json-server.typicode.com/Wambuiwambugu/Group-8-REST-API/db/users";
+  const baseUrl = "https://my-json-server.typicode.com/Wambuiwambugu/Group-8-REST-API/users";
   const [showLoginSignup, setShowLoginSignup] = useState(false);
   useEffect(() => {
     fetch(baseUrl)
