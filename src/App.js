@@ -5,6 +5,7 @@ import LoginSignup from "./components/Login/LoginSignup";
 import Header from "./components/Landingpage/Header";
 import Landingpage from "./components/Landingpage/Landingpage";
 import Dashboard from "./components/Dashboard/Dashboard";
+import Footer from "./components/Footer/Footer";
 
 import "./components/Landingpage/Landingpage.css";
 
@@ -163,6 +164,7 @@ function App() {
           element={currentUser ? <Dashboard userData={currentUser} handleLogout={handleLogout} /> : <Navigate to="/loginSignup" />}
         />
       </Routes>
+      <Footer />
     </div>
   );
 }
