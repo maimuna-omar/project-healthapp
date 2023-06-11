@@ -1,0 +1,125 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+.App-header {
+  background-color: rgb(56, 157, 56);
+  min-height: 1000vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.header {
+  background-color: rgb(58, 69, 58);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #509056;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header a {
+  text-decoration: none;
+  color:  black;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-size: x-large;
+}
+
+.header a:hover {
+  color: black;
+}
+
+.app-introduction {
+  text-align: center;
+  font-weight: bolder;
+  margin-top: 0px;
+  padding: 20px;
+}
+
+.app-introduction h1 {
+  background-color: rgb(137, 175, 137);
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+}
+
+.app-introduction p {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  color: black;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.key-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 40px;
+}
+
+.cta-button {
+  padding: 12px 20px;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: bolder;
+  color: white;
+  background-color: rgb(110, 168, 110);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 30px;
+}
+
+/* .cta-button:hover {
+  background-color: rgb(96, 118, 96);
+} */
+
+.login-link {
+  font-size: 14px;
+  color: #666;
+}
+
+.login-link a {
+  color: rgb(8, 130, 8);
+}
