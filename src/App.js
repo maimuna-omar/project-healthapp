@@ -6,6 +6,8 @@ import Header from "./components/Landingpage/Header";
 import Landingpage from "./components/Landingpage/Landingpage";
 import Dashboard from "./components/Dashboard/Dashboard";
 //import Footer from "./components/Footer/Footer";
+import ActivitiesContainer from "./components/Activities/ActivitiesContainer";
+import HealthGoals from "./components/HealthGoals/HealthGoals";
 
 import "./components/Landingpage/Landingpage.css";
 
@@ -14,16 +16,15 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [error, setError] = useState("");
   const [userData, setUserData] = useState([]);
-  const baseUrl = "http://localhost:8080/users";
+  const baseUrl = "https://my-json-server.typicode.com/Wambuiwambugu/Group-8-REST-API/db/users";
   const [showLoginSignup, setShowLoginSignup] = useState(false);
-
   useEffect(() => {
     fetch(baseUrl)
       .then((res) => res.json())
       .then((data) => {
         setUserData(data);
         const storedCurrentUser = localStorage.getItem("currentUser");
-        if (storedCurrentUser) {
+        if (storedCurrentUser && storedCurrentUser !== "undefined") {
           const parsedUser = JSON.parse(storedCurrentUser);
           setCurrentUser(parsedUser);
         }
@@ -35,6 +36,8 @@ function App() {
         );
       });
   }, []);
+  
+  
 
 
   const navigate = useNavigate();
@@ -162,6 +165,18 @@ function App() {
         <Route
           path="/dashboard"
           element={currentUser ? <Dashboard userData={currentUser} handleLogout={handleLogout} /> : <Navigate to="/loginSignup" />}
+        />
+        <Route 
+          path="/activities"
+          element={currentUser? <ActivitiesContainer currentUser={currentUser} baseUrl={baseUrl} /> : <Navigate to="/login"/>}
+        />
+         <Route 
+          path="/activities"
+          element={currentUser? <ActivitiesContainer currentUser={currentUser} baseUrl={baseUrl} /> : <Navigate to="/login"/>}
+        />
+         <Route 
+          path="/goals"
+          element={currentUser? <HealthGoals currentUser={currentUser} /> : <Navigate to="/login"/>}
         />
       </Routes>
       {/* <Footer /> */}
