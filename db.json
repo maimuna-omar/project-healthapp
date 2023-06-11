@@ -119,30 +119,6 @@
           "workoutTime": 30
         }
       ]
-    },
-    {
-      "id": 6,
-      "name": "Maya",
-      "email": "maymunaabdi07@gmail.com",
-      "password": "123456789",
-      "goals": {
-        "walking": 0,
-        "sleep": 0,
-        "waterIntake": 0,
-        "workoutTime": 0
-      },
-      "dailyActivities": [
-        {
-          "id": 1,
-          "date": "",
-          "walking": 0,
-          "sleep": 0,
-          "waterIntake": 0,
-          "workoutTime": 0
-        }
-      ]
     }
-      ]
-    }
-  
-
+  ]
+}
