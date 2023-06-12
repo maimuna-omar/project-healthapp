@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import AddDailyActivity from "./AddDailyActivities";
+
 import ActivityList from "./ActivityList";
 import { v4 as uuidv4 } from "uuid";
 
